@@ -1,20 +1,37 @@
 {
   "name": "@dev-jdb/component-template",
   "version": "0.0.1",
-  "description": "",
+  "author": "John Blackwell",
+  "description": "The repository can be used as a template to create a library of React component(s). The library comes out of the box with typescript, storybook, testing-library/react, and styled-components configured.",
   "scripts": {
     "build": "rollup -c",
     "build:storybook": "build-storybook",
     "create": "node ./scripts/createComponent/index.mjs",
+    "prepack": "rm -rf dist && npm run build",
     "rimraf": "rm -rf dist node_modules",
     "test": "jest",
     "start:storybook": "start-storybook -p 6565 --quiet"
   },
   "keywords": [],
-  "author": "John Blackwell",
   "license": "ISC",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
+  "types": "dist/cjs/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/esm/types/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/types/index.d.ts",
+        "default": "./dist/cjs/index.js"
+      }
+    }
+  },
+  "files": [
+    "dist/**/*"
+  ],
   "peerDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
