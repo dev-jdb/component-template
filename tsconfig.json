@@ -101,8 +101,11 @@
     "skipLibCheck": true /* Skip type checking all .d.ts files. */
   },
   "exclude": [
+    ".storybook",
+    "coverage",
     "dist",
     "node_modules",
+    "scripts",
     "src/**/**/*.stories.tsx",
     "src/**/**/*.test.tsx"
   ]
