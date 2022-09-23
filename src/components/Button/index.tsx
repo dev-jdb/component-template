@@ -1,28 +1,28 @@
-import React, { FC } from "react";
+import React, { FC } from 'react';
 
-import { StyledButton } from "./styles";
-import { ButtonProps } from "./types";
+import * as S from './styles';
+import { ButtonProps } from './types';
 
 export const Button: FC<ButtonProps> = ({
-  size,
-  primary,
-  disabled,
-  text,
-  onClick,
-  ...props
+	size,
+	primary,
+	disabled,
+	text,
+	onClick,
+	...props
 }) => {
-  return (
-    <StyledButton
-      type="button"
-      onClick={onClick}
-      primary={primary}
-      disabled={disabled}
-      size={size}
-      {...props}
-    >
-      {text}
-    </StyledButton>
-  );
+	return (
+		<S.Button
+			type='button'
+			onClick={onClick}
+			primary={primary}
+			disabled={disabled}
+			size={size}
+			{...props}
+		>
+			{text}
+		</S.Button>
+	);
 };
 
 export default Button;
