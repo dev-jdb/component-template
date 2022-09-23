@@ -5,6 +5,7 @@
   "scripts": {
     "build": "rollup -c",
     "build:storybook": "build-storybook",
+    "create": "node ./scripts/createComponent/index.mjs",
     "rimraf": "rm -rf dist node_modules",
     "test": "jest",
     "start:storybook": "start-storybook -p 6565 --quiet"
