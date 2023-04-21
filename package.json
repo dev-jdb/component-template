@@ -5,12 +5,10 @@
   "description": "The repository can be used as a template to create a library of React component(s). The library comes out of the box with typescript, storybook, testing-library/react, and styled-components configured.",
   "scripts": {
     "build": "rollup -c",
-    "build:storybook": "build-storybook",
     "create": "node ./scripts/createComponent/index.mjs",
     "prepack": "rm -rf dist && npm run build",
     "rimraf": "rm -rf dist node_modules",
     "test": "jest --coverage",
-    "start:storybook": "start-storybook -p 6565 --quiet",
     "semantic-release": "semantic-release"
   },
   "keywords": [],
@@ -45,14 +43,6 @@
     "@rollup/plugin-commonjs": "^22.0.2",
     "@rollup/plugin-node-resolve": "^14.1.0",
     "@rollup/plugin-typescript": "^8.5.0",
-    "@storybook/addon-actions": "^6.5.12",
-    "@storybook/addon-essentials": "^6.4.22",
-    "@storybook/addon-interactions": "^6.5.12",
-    "@storybook/addon-links": "^6.5.12",
-    "@storybook/builder-webpack4": "^6.5.12",
-    "@storybook/manager-webpack4": "^6.5.12",
-    "@storybook/react": "^6.1.21",
-    "@storybook/testing-library": "^0.0.13",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^14.4.3",
@@ -78,9 +68,6 @@
     "branches": [
       "main"
     ]
-  },
-  "dependencies": {
-    "storybook": "^6.5.12"
   },
   "repository": {
     "type": "git",
