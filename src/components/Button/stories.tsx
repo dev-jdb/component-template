@@ -1,58 +1,47 @@
-import React from 'react';
-import { Story, Meta } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
-import Button from './index';
-import { ButtonProps } from './types';
+import { Button } from './index';
 
-export default {
-	title: 'Button',
-	component: Button,
-	argTypes: {},
-} as Meta<typeof Button>;
-
-const Template: Story<ButtonProps> = args => <Button {...args} />;
-
-export const Primary = Template.bind({});
-Primary.args = {
-	primary: true,
-	disabled: false,
-	text: 'Primary',
+// More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
+const meta: Meta<typeof Button> = {
+  title: 'Example/Button',
+  component: Button,
+  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
+  tags: ['autodocs'],
+  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
+  argTypes: {
+    color: { control: 'color' },
+  },
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-	primary: false,
-	disabled: false,
-	text: 'Secondary',
+export default meta;
+type Story = StoryObj<typeof Button>;
+
+// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
+export const Primary: Story = {
+  // More on args: https://storybook.js.org/docs/react/writing-stories/args
+  args: {
+    primary: true,
+    text: 'Button',
+  },
 };
 
-export const Disabled = Template.bind({});
-Disabled.args = {
-	primary: false,
-	disabled: true,
-	text: 'Disabled',
+export const Secondary: Story = {
+  args: {
+    text: 'Button',
+  },
 };
 
-export const Small = Template.bind({});
-Small.args = {
-	primary: true,
-	disabled: false,
-	size: 'small',
-	text: 'Small',
+export const Large: Story = {
+  args: {
+    size: 'large',
+    text: 'Button',
+  },
 };
 
-export const Medium = Template.bind({});
-Medium.args = {
-	primary: true,
-	disabled: false,
-	size: 'medium',
-	text: 'Medium',
-};
-
-export const Large = Template.bind({});
-Large.args = {
-	primary: true,
-	disabled: false,
-	size: 'large',
-	text: 'Large',
+export const Small: Story = {
+  args: {
+    size: 'small',
+    text: 'Button',
+  },
 };

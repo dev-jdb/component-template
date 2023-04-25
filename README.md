@@ -1,6 +1,7 @@
 # React Component Template
 
 ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
+[![semantic-release: react](https://img.shields.io/badge/semantic--release-react-e10079?logo=semantic-release)](https://github.com/semantic-release/semantic-release)
 
 ## Description
 
