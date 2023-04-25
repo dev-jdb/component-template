@@ -2,6 +2,14 @@ import styled from 'styled-components';
 
 import { ButtonProps } from './types';
 
+const btnSizes = {
+  padding: {
+    small: '.5rem 1.5rem',
+    medium: '.625rem 1.625rem',
+    large: '.75rem 1.625rem',
+  },
+};
+
 export const Button = styled.button<ButtonProps>`
   border: 0;
   line-height: 1;
@@ -11,8 +19,7 @@ export const Button = styled.button<ButtonProps>`
   font-weight: bold;
   border-radius: 3px;
   display: inline-block;
-  padding: ${props =>
-    props.size === 'small' ? '7px 25px 8px' : props.size === 'medium' ? '9px 30px 11px' : '14px 30px 16px'};
+  padding: ${({ size = 'medium' }) => btnSizes.padding[size]};
   color: ${props => (props.primary ? '#1b116e' : '#ffffff')};
   background-color: ${props => (props.color ?? props.primary ? '#6bedb5' : '#1b116e')};
   opacity: ${props => (props.disabled ? 0.5 : 1)};
@@ -21,7 +28,5 @@ export const Button = styled.button<ButtonProps>`
   }
   &:active {
     border: solid 2px #1b116e;
-    padding: ${props =>
-      props.size === 'small' ? '5px 23px 6px' : props.size === 'medium' ? '7px 28px 9px' : '12px 28px 14px'};
   }
 `;
